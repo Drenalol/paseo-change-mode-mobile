@@ -2,7 +2,7 @@
 
 One-tap agent mode switching for Paseo, right above the composer.
 
-![The Build pill above the Paseo composer](images/pill-build-desktop.png)
+![The Build pill above the Paseo composer](images/pill-build-mobile.png)
 
 The agent's current mode (Build / Plan for OpenCode, the permission modes of
 other providers) sits in a **composer pill** next to the input field: its
