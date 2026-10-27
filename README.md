@@ -95,6 +95,9 @@ npm run verify   # typecheck + Hermes-safe client bundle check
 paseo plugin install "$PWD"
 ```
 
+Releasing a new version (npm + registry flow, with the gotchas): see
+[RELEASE.md](RELEASE.md).
+
 Layout: `index.client.tsx` (pills + subscriptions), `index.server.ts` (RPC +
 settings), `server/change-mode.ts` (CLI resolution and execution),
 `shared/contract.ts` (RPC + settings schemas), `client/settings.tsx` (the
