@@ -31,29 +31,19 @@ Part of the same toolbox as [turn-speed](https://github.com/Drenalol/paseo-turn-
 
 ## Install
 
+```bash
+paseo plugin add npm:paseo-change-mode-mobile
+# or, from Git:
+paseo plugin add github:Drenalol/paseo-change-mode-mobile
+```
+
+Enable plugins first if you haven't: Settings → Plugins → Enable plugins. The
+pill then appears on every live agent of every connected client; Settings →
+Plugins → Change mode adds the two switches described below.
+
 Requires Paseo 0.12 or newer and the `paseo` CLI on the daemon machine (the
 desktop app installs it; `PASEO_CLI`, `PATH`, `~/.local/bin/paseo`,
 `/usr/local/bin/paseo` and `/opt/homebrew/bin/paseo` are auto-detected).
-
-```bash
-paseo plugin add Drenalol/paseo-change-mode-mobile
-```
-
-Or straight from Git before the registry listing lands:
-
-```bash
-paseo plugin add git:Drenalol/paseo-change-mode-mobile
-```
-
-Or from a checkout:
-
-```bash
-git clone https://github.com/Drenalol/paseo-change-mode-mobile
-paseo plugin install /absolute/path/to/paseo-change-mode-mobile
-```
-
-The pill appears on every live agent of every connected client. Enable
-plugins first if you haven't: Settings → Plugins → Enable plugins.
 
 ## Settings
 
@@ -80,6 +70,22 @@ Settings → Plugins → Change mode:
 **Privacy:** nothing leaves the daemon machine. The only command ever run is
 `paseo agent mode`, with both arguments validated against an identifier
 pattern and spawned without a shell.
+
+## Known limitations
+
+- Mode switching goes through the `paseo` CLI, so the daemon machine needs
+  one. Auto-detection covers the desktop app and the usual install locations;
+  Settings → Plugins → Change mode takes an explicit path when it misses.
+- The pill offers exactly what a provider exposes. Providers without dynamic
+  modes are left alone, and an agent with fewer than two selectable modes has
+  nothing to switch, so it gets no pill either.
+- A switch is applied by the daemon and therefore behaves the way the built-in
+  selector behaves for that provider — including providers that take the new
+  mode in only on the next turn. The pill shows what the agent snapshot
+  reports, never a wish.
+- The plugin SDK exposes no client-side mode setter, so a tap costs one daemon
+  round trip. If the SDK grows a setter, that hop disappears with no visible
+  change.
 
 ## Development
 

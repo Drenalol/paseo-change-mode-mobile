@@ -1,6 +1,5 @@
 {
   "name": "paseo-change-mode-mobile",
-  "private": true,
   "version": "1.0.0",
   "description": "One-tap agent mode (Build/Plan) switching from a composer pill, tuned for the Paseo mobile app",
   "license": "MIT",
