@@ -1,0 +1,52 @@
+{
+  "name": "paseo-change-mode-mobile",
+  "private": true,
+  "version": "1.0.0",
+  "description": "One-tap agent mode (Build/Plan) switching from a composer pill, tuned for the Paseo mobile app",
+  "license": "MIT",
+  "author": "Bogdan Yanysh <acidlol@live.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drenalol/paseo-change-mode-mobile.git"
+  },
+  "homepage": "https://github.com/Drenalol/paseo-change-mode-mobile#readme",
+  "bugs": {
+    "url": "https://github.com/Drenalol/paseo-change-mode-mobile/issues"
+  },
+  "keywords": [
+    "paseo",
+    "paseo-plugin",
+    "agent-mode",
+    "plan",
+    "build",
+    "mobile"
+  ],
+  "files": [
+    "paseo-plugin.json",
+    "OVERVIEW.md",
+    "OVERVIEW.*.md",
+    "index.client.ts",
+    "index.client.tsx",
+    "index.server.ts",
+    "index.server.tsx",
+    "client/",
+    "server/",
+    "shared/"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "check:client": "node scripts/check-client-bundle.mjs",
+    "verify": "npm run typecheck && npm run check:client"
+  },
+  "devDependencies": {
+    "@getpaseo/plugin": "0.13.2",
+    "@tanstack/react-query": "^5.90.11",
+    "@types/node": "^20.9.0",
+    "@types/react": "~19.2.0",
+    "esbuild": "^0.25.12",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3"
+  }
+}
