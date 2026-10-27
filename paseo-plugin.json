@@ -2,6 +2,7 @@
   "id": "change-mode-mobile",
   "name": "Change mode",
   "description": "See the agent's mode (Build, Plan, ...) and switch it with one tap, right above the composer. Tuned for the mobile app; hidden on desktop unless enabled.",
+  "icon": "assets/icon.png",
   "media": [],
   "requirements": {
     "paseo": ">=0.12.0"

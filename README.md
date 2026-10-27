@@ -37,7 +37,13 @@ desktop app installs it; `PASEO_CLI`, `PATH`, `~/.local/bin/paseo`,
 paseo plugin add Drenalol/paseo-change-mode-mobile
 ```
 
-Or install from a checkout:
+Or straight from Git before the registry listing lands:
+
+```bash
+paseo plugin add git:Drenalol/paseo-change-mode-mobile
+```
+
+Or from a checkout:
 
 ```bash
 git clone https://github.com/Drenalol/paseo-change-mode-mobile
