@@ -14,6 +14,11 @@ How to ship a new version of this plugin and keep the three listings in sync.
 Local development stays on the directory source (`paseo plugin install "$PWD"`);
 public installs use `npm:paseo-change-mode-mobile`.
 
+The official listing is deliberately left on the Git pin. Step 8 is one issue
+per release, and in exchange the review sees the exact commit users get. To
+switch later, file a submission whose Source is the npm package: the listing is
+rebuilt with `kind: npm` and the bump bot starts opening PRs on its own.
+
 ## Cutting a release
 
 1. Bump `version` in `package.json` (semver; the npm version is the update
