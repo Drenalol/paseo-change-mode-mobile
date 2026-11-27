@@ -35,6 +35,13 @@ function modeLabel(modes: readonly ModeInfo[], currentId: string | null): string
   return current?.label ?? currentId ?? "Mode";
 }
 
+// Fixed-width UTF-16 keeps IDs unique and stable across menu rebuilds.
+function modeButtonId(modeId: string): string {
+  return "mode-" + modeId.split("")
+    .map((char) => char.charCodeAt(0).toString(16).padStart(4, "0"))
+    .join("");
+}
+
 interface Attachment {
   agentId: string;
   workspaceId: string;
@@ -115,7 +122,7 @@ export default function contribute(client: PluginClientContext) {
       kind: "menu",
       items: modes.map((mode) => ({
         kind: "item" as const,
-        id: mode.id,
+        id: modeButtonId(mode.id),
         title: mode.id === currentId ? `${mode.label} \u2713` : mode.label,
         disabled: mode.id === currentId,
         behavior: { kind: "action" as const, onPress: () => apply(mode.id) },
